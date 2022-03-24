@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="FLo-uV-EHO">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Enter Phone Number-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="StartVerificationViewController" customModule="Phone_Verification" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="qXv-vH-aZz">
+                                <rect key="frame" x="16" y="108" width="358" height="114"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Country Code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bv5-HB-vbP">
+                                        <rect key="frame" x="0.0" y="0.0" width="358" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BLq-HX-14j">
+                                        <rect key="frame" x="0.0" y="42" width="358" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ydf-1W-SWe">
+                                        <rect key="frame" x="0.0" y="84" width="358" height="30"/>
+                                        <state key="normal" title="Verify Phone Number"/>
+                                        <connections>
+                                            <action selector="sendVerification:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3xU-JN-QEE"/>
+                                            <segue destination="gKK-St-qol" kind="show" id="vea-06-SPo"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qXv-vH-aZz" secondAttribute="trailing" constant="16" id="78k-A6-CPi"/>
+                            <constraint firstItem="qXv-vH-aZz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="8AS-bk-Vbb"/>
+                            <constraint firstItem="qXv-vH-aZz" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="hYc-fx-mfp"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Enter Phone Number" id="peD-X4-m2M"/>
+                    <connections>
+                        <outlet property="countryCodeField" destination="bv5-HB-vbP" id="yNK-gd-nKh"/>
+                        <outlet property="phoneNumberField" destination="BLq-HX-14j" id="579-cs-ACr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1001" y="-564"/>
+        </scene>
+        <!--Check Verification View Controller-->
+        <scene sceneID="7kB-Cg-lL3">
+            <objects>
+                <viewController id="gKK-St-qol" customClass="CheckVerificationViewController" customModule="Phone_Verification" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tYo-9k-0hu">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="w4G-RE-xA6">
+                                <rect key="frame" x="16" y="108" width="358" height="72"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Verification Code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jA1-DP-hDd">
+                                        <rect key="frame" x="0.0" y="0.0" width="358" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status goes here" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l8c-PP-A2F">
+                                        <rect key="frame" x="0.0" y="38" width="358" height="0.0"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Czs-Cb-CS3">
+                                        <rect key="frame" x="0.0" y="42" width="358" height="30"/>
+                                        <state key="normal" title="Verify"/>
+                                        <connections>
+                                            <action selector="validateCode:" destination="gKK-St-qol" eventType="touchUpInside" id="p3c-i6-TLJ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Ulo-MQ-ySg"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Ulo-MQ-ySg" firstAttribute="trailing" secondItem="w4G-RE-xA6" secondAttribute="trailing" constant="16" id="MXp-gr-ucM"/>
+                            <constraint firstItem="w4G-RE-xA6" firstAttribute="top" secondItem="Ulo-MQ-ySg" secondAttribute="top" constant="20" id="arN-OZ-EcJ"/>
+                            <constraint firstItem="w4G-RE-xA6" firstAttribute="leading" secondItem="Ulo-MQ-ySg" secondAttribute="leading" constant="16" id="ycP-gJ-PkF"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="codeField" destination="jA1-DP-hDd" id="LIM-qz-IwH"/>
+                        <outlet property="statusLabel" destination="l8c-PP-A2F" id="fyL-jJ-E3V"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rmd-3S-DsZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1750" y="-564"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="VNl-R9-Op4">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FLo-uV-EHO" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Veg-fe-t0w">
+                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="bNF-1x-tmS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j7V-is-noh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="133.59999999999999" y="-564.46776611694156"/>
+        </scene>
+    </scenes>
+</document>
